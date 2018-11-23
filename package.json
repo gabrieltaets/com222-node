@@ -1,0 +1,25 @@
+{
+  "name": "com222-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieltaets/com222-node.git"
+  },
+  "author": "Gabriel Taets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrieltaets/com222-node/issues"
+  },
+  "homepage": "https://github.com/gabrieltaets/com222-node#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1",
+    "supertest": "^3.3.0"
+  }
+}
