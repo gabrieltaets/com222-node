@@ -1,26 +1,11 @@
-var User = function (nome, matricula) {
-  this.nome = nome;
-  this.matricula = matricula;
-}
+var {database, User} = require('./database.js');
 
-var Database = function() {
-  this.data = [
-    new User('Gabriel', '2017000959'),
-    new User('Fabio', '2016006260'),
-    new User('Jonathan', '2017000850')
-  ];
-  this.getUser = (nome) => {
-    return new Promise((success, error) => {
-      setTimeout(() => {
-        let user = this.data.find(x => x.nome === nome);
-        if(user === undefined) error('Not found');
-        else success(user);
-      }, 30);
-    });
-  };
-}
-var db = new Database();
+var u1 = new User('gtaets', 'abc', 'G.', 'T.');
+var u2 = new User('elgonca', 'xyz', 'E.', 'C.');
+var u3 = new User('ggferre', '123', 'G', 'F');
 
-module.exports = {
-  database: db
-}
+database.addUser(u1).then(x => console.log('Add u1'));
+database.addUser(u2).then(x => console.log('Add u2'));
+database.addUser(u3).then(x => console.log('Add u3'));
+
+module.exports.database = database;

@@ -1,29 +1,17 @@
-var assert = require('assert');
-var {database} = require('../index.js');
-
-describe('index.js', function() {
-  describe('Database', function () {
-    it('deve encontrar Gabriel', async function() {
-      let user = await database.getUser('Gabriel');
-      assert.deepEqual(user, {
-        nome: 'Gabriel',
-        matricula: '2017000959'
-      });
-    });
-    it('deve encontar Gabriel 2', function() {
-      return database.getUser('Gabriel').then(u => {
-        assert.deepEqual(u, {
-          nome: 'Gabriel',
-          matricula: '2017000959'
+/* test/index.spec.js */
+var assert = require('assert'); // módulo assert do Node.js
+var {database} = require('../index.js'); // database instanciado
+describe('index.js', function() { // coleção principal de teste
+  describe('Database', function () { // sub-coleção de teste
+    it('deve encontrar elgonca', function() { // o que se espera desse teste?
+      return database.getUser('elgonca').then((u) => { // chama o “database”
+        assert.deepEqual(u, { // verifica que os atributos batem
+          username: 'elgonca',
+          password: 'xyz',
+          firstName: 'E.',
+          lastName: 'C.'
         });
       });
     });
-    it('nao deve encontrar José', function() {
-      return assert.rejects(database.getUser('José'));
-    });
   });
 });
-
-/*
-Promise/then <-> async/await
-*/
