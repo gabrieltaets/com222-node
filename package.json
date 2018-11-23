@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/gabrieltaets/com222-node.git"
   },
-  "author": "Gabriel Taets",
+  "author": [
+    "Gabriel Taets",
+    "Jonathan Theodoro",
+    "Fabio Rodrigo"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gabrieltaets/com222-node/issues"
